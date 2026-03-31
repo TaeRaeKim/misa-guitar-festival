@@ -474,24 +474,42 @@
       flex-direction: column;
     }
 
-    .artist-img {
+    .artist-img-wrap {
+      overflow: hidden;
       width: 100%;
+      flex-shrink: 0;
       aspect-ratio: 1 / 1;
-      object-fit: cover;
+      position: relative;
+      background: var(--dark-wood);
+    }
+
+    .artist-img-bg {
+      position: absolute;
+      inset: -20px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(20px) brightness(0.7) grayscale(20%);
+      transition: filter 0.4s ease;
+    }
+
+    .artist-card:hover .artist-img-bg {
+      filter: blur(20px) brightness(0.8) grayscale(0%);
+    }
+
+    .artist-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       display: block;
       filter: grayscale(20%);
       transition: filter 0.4s ease, transform 0.6s ease;
+      z-index: 1;
     }
 
     .artist-card:hover .artist-img {
       filter: grayscale(0%);
       transform: scale(1.03);
-    }
-
-    .artist-img-wrap {
-      overflow: hidden;
-      width: 100%;
-      flex-shrink: 0;
     }
 
     .artist-card-body {
@@ -1039,14 +1057,16 @@
       <div class="section-label reveal">// ABOUT THE FESTIVAL</div>
       <h2 class="section-heading reveal reveal-delay-1">기타 하나로<br>연결되는 우리</h2>
       <p class="reveal reveal-delay-2">
-        미사통기타축제는 기타를 사랑하는 모든 이들을 위한 축제입니다.
-        프로 뮤지션부터 동네에서 조용히 기타를 켜는 아마추어까지,
-        기타라는 하나의 악기로 연결되는 특별한 하루를 선사합니다.
+        프로 뮤지션부터 동네에서 조용히 기타를 켜는 아마추어까지 &mdash;
+        통기타를 사랑하는 사람이라면 누구나 환영합니다.
+        여섯 줄 위에 올려놓은 마음이 하나로 이어지는 자리,
+        미사통기타축제입니다.
       </p>
       <p class="reveal reveal-delay-3">
-        한강이 내려다보이는 미사호수공원 계단광장에서 펼쳐지는 야외 무대,
-        자유롭게 참여할 수 있는 오픈 잼 세션, 기타 전시와 체험 부스까지.
-        올해로 3회째를 맞이하는 미사통기타축제에 여러분을 초대합니다.
+        봄꽃이 만발한 미사호수공원 계단광장에서
+        감미로운 발라드와 추억의 팝송, 요즘 가요까지 &mdash;
+        한때 미사 카페거리를 수놓던 통기타 선율이 다시 울려 퍼집니다.
+        무대와 객석의 경계 없이, 음악으로 함께하는 봄날의 오후를 만나보세요.
       </p>
     </div>
 
@@ -1147,7 +1167,7 @@
         </div>
       </div>
       <div class="artist-card reveal reveal-delay-1">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/04-강울림.jpg" alt="강울림"></div>
+        <div class="artist-img-wrap"><img class="artist-img" src="images/04-강울림.png" alt="강울림"></div>
         <div class="artist-card-body">
         <div class="artist-number">ARTIST 05</div>
         <div class="artist-name">강울림</div>
@@ -1492,6 +1512,16 @@
   </footer>
 
   <script>
+    // ── Artist image blur background ──
+    document.querySelectorAll('.artist-img-wrap').forEach(wrap => {
+      const img = wrap.querySelector('.artist-img');
+      const bg = document.createElement('div');
+      bg.classList.add('artist-img-bg');
+      wrap.insertBefore(bg, img);
+      const setSrc = () => { bg.style.backgroundImage = `url(${img.src})`; };
+      if (img.complete) setSrc(); else img.addEventListener('load', setSrc);
+    });
+
     // ── Scroll reveal ──
     const revealElements = document.querySelectorAll('.reveal');
 
