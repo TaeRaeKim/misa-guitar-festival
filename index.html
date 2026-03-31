@@ -805,6 +805,15 @@
       filter: saturate(0.6) contrast(1.1);
     }
 
+    .map-mobile {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .map-desktop { display: none; }
+      .map-mobile { display: block; aspect-ratio: auto; height: 70vh; }
+    }
+
     .directions-info h3 {
       font-family: 'Crimson Pro', serif;
       font-weight: 700;
@@ -1068,7 +1077,7 @@
     <div class="container about-grid">
     <div class="about-text">
       <div class="section-label reveal">// ABOUT THE FESTIVAL</div>
-      <h2 class="section-heading reveal reveal-delay-1">기타 하나로<br>연결되는 우리</h2>
+      <h2 class="section-heading reveal reveal-delay-1">통기타 하나로<br>연결되는 우리</h2>
       <p class="reveal reveal-delay-2">
         프로 뮤지션부터 동네에서 조용히 기타를 켜는 아마추어까지 &mdash;
         통기타를 사랑하는 사람이라면 누구나 환영합니다.
@@ -1471,12 +1480,20 @@
     <h2 class="section-heading reveal reveal-delay-1">오시는 길</h2>
 
     <div class="directions-grid">
-      <div class="map-placeholder reveal">
+      <div class="map-placeholder reveal map-desktop">
         <iframe
           src="https://map.naver.com/p/entry/place/1661180242?c=15.00,0,0,0,dh&isCorrectAnswer=true"
           allowfullscreen=""
           loading="lazy"
           title="미사호수공원 음악분수 광장 지도"
+        ></iframe>
+      </div>
+      <div class="map-placeholder reveal map-mobile">
+        <iframe
+          src="https://m.place.naver.com/place/1661180242/location?filter=location&selected_place_id=1661180242"
+          allowfullscreen=""
+          loading="lazy"
+          title="미사호수공원 음악분수 광장 지도 (모바일)"
         ></iframe>
       </div>
 
