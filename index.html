@@ -712,20 +712,20 @@
 
     .sponsor-logos {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 24px;
       margin-bottom: 32px;
     }
 
     .sponsor-logo-card {
-      background: var(--cream);
+      background: #ffffff;
       border: 1px solid rgba(200,150,62,0.15);
-      padding: 24px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      aspect-ratio: 16 / 9;
-      transition: all 0.3s ease;
     }
 
     .sponsor-logo-card:hover {
@@ -733,10 +733,15 @@
       transform: translateY(-2px);
     }
 
+    .sponsor-logo-card.bg-pink {
+      background: #EE3980;
+    }
+
     .sponsor-logo-card img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      padding: 16px;
     }
 
     .sponsor-text-list {
@@ -951,7 +956,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-visual { height: 300px; }
       .cards-grid { grid-template-columns: 1fr; }
-      .sponsor-logos { grid-template-columns: repeat(2, 1fr); }
+      .sponsor-logos { grid-template-columns: repeat(3, 1fr); }
       .directions-grid { grid-template-columns: 1fr; }
       .lineup-grid { grid-template-columns: 1fr; }
       .timetable-item { grid-template-columns: 100px 1fr; gap: 16px; }
@@ -1423,18 +1428,25 @@
     <div class="sponsor-block reveal reveal-delay-3">
       <div class="sponsor-block-label">후원</div>
       <div class="sponsor-logos">
-        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-01.svg" alt="하남시"></div>
-        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-02.svg" alt="하남문화재단"></div>
-        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-03.svg" alt="Taylor Guitars"></div>
-        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-04.svg" alt="버드뮤직"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/1-jackfiled.jpg" alt="JACKFIELD"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/2-dennis.jpg" alt="DENNIS"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/3-jfglobal.png" alt="JF Global"></div>
+        <div class="sponsor-logo-card bg-pink"><img src="images/sponsors/4-evaclaire.png" alt="에바끌레르"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/5-버드뮤직.jpg" alt="버드뮤직"></div>
       </div>
       <div class="sponsor-text-list">
-        <span>미사동 주민센터</span>
-        <span>하남시 생활문화센터</span>
-        <span>소나기 통기타연합</span>
-        <span>미사리 블루홀</span>
-        <span>노원둥지 나우누리</span>
-        <span>하남시 자원봉사센터</span>
+        <span>하남일보</span>
+        <span>하남시자원봉사단체협의회</span>
+        <span>강동하남상생발전협의회</span>
+        <span>미사강변시민연합</span>
+        <span>미사강변총연합회</span>
+        <span>동부신협</span>
+        <span>하남시건설기술협회</span>
+        <span>교산맛집</span>
+        <span>(주)황금손 배대열</span>
+        <span>JACKFIELD / DENNIS</span>
+        <span>에바끌레르 골프전용 화장품</span>
+        <span>버드뮤직</span>
       </div>
     </div>
 
@@ -1521,6 +1533,7 @@
       const setSrc = () => { bg.style.backgroundImage = `url(${img.src})`; };
       if (img.complete) setSrc(); else img.addEventListener('load', setSrc);
     });
+
 
     // ── Scroll reveal ──
     const revealElements = document.querySelectorAll('.reveal');
