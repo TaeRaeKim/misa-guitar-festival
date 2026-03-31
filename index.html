@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미사통기타축제 2026</title>
+  <meta name="description" content="2026 미사통기타축제 - 봄바람에 실려오는 기타 선율. 하남 미사리 한강변에서 펼쳐지는 감성 기타 페스티벌.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400&family=Noto+Sans+KR:wght@100;300;400;700;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #F5F0E8;
+      --warm-ivory: #EDE6D6;
+      --amber: #C8963E;
+      --deep-amber: #A67621;
+      --terracotta: #C4654A;
+      --dark-wood: #2C1810;
+      --medium-wood: #5C3A28;
+      --charcoal: #1A1612;
+      --soft-brown: #8B7355;
+      --light-tan: #D4C5A9;
+      --forest: #4A5D3A;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Grain overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 20px 40px;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav.scrolled {
+      background: rgba(245, 240, 232, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-logo {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      color: var(--dark-wood);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--medium-wood);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 40px 80px;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(200, 150, 62, 0.12), transparent),
+        radial-gradient(ellipse 60% 50% at 20% 70%, rgba(196, 101, 74, 0.08), transparent),
+        linear-gradient(175deg, var(--cream) 0%, var(--warm-ivory) 100%);
+    }
+
+    .hero-strings {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-strings .string {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--light-tan) 20%,
+        var(--amber) 50%,
+        var(--light-tan) 80%,
+        transparent 100%
+      );
+      opacity: 0;
+      animation: stringAppear 1.5s ease forwards;
+    }
+
+    .hero-strings .string:nth-child(1) { left: 12%; animation-delay: 0.8s; opacity: 0; }
+    .hero-strings .string:nth-child(2) { left: 24%; animation-delay: 1.0s; }
+    .hero-strings .string:nth-child(3) { left: 36%; animation-delay: 1.2s; }
+    .hero-strings .string:nth-child(4) { left: 55%; animation-delay: 1.4s; }
+    .hero-strings .string:nth-child(5) { left: 72%; animation-delay: 1.6s; }
+    .hero-strings .string:nth-child(6) { left: 88%; animation-delay: 1.8s; }
+
+    @keyframes stringAppear {
+      0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      60% { opacity: 0.25; }
+      100% { opacity: 0.15; transform: scaleY(1); }
+    }
+
+    .hero-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 200;
+      font-size: clamp(56px, 10vw, 140px);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: var(--dark-wood);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeSlideUp 1.2s ease 0.5s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--terracotta);
+      font-weight: 200;
+    }
+
+    .hero-subtitle {
+      font-weight: 300;
+      font-size: clamp(16px, 2vw, 22px);
+      line-height: 1.6;
+      color: var(--soft-brown);
+      max-width: 520px;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease 0.8s forwards;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease 1.5s forwards;
+    }
+
+    .hero-scroll-hint span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--soft-brown);
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: var(--amber);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 0.5; }
+      50% { transform: scaleY(0.5); opacity: 1; }
+    }
+
+    /* ── Section base ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    section {
+      padding: 120px 40px;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 200;
+      font-size: clamp(36px, 5vw, 64px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--dark-wood);
+      margin-bottom: 48px;
+    }
+
+    /* ── About ── */
+    .about {
+      background:
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(196, 101, 74, 0.06), transparent),
+        var(--warm-ivory);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--medium-wood);
+      margin-bottom: 20px;
+    }
+
+    .about-visual {
+      position: relative;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guitar-shape {
+      width: 200px;
+      height: 420px;
+      position: relative;
+    }
+
+    .guitar-body {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 220px;
+      border-radius: 50% 50% 48% 48%;
+      border: 2px solid var(--amber);
+      opacity: 0.4;
+    }
+
+    .guitar-body::before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px solid var(--amber);
+      opacity: 0.6;
+    }
+
+    .guitar-neck {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 180px;
+      border-left: 2px solid var(--amber);
+      border-right: 2px solid var(--amber);
+      opacity: 0.3;
+    }
+
+    .guitar-neck::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 24px;
+      border: 2px solid var(--amber);
+      border-radius: 4px 4px 0 0;
+      opacity: 0.5;
+    }
+
+    .sound-hole {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--terracotta);
+      opacity: 0.3;
+      animation: soundPulse 3s ease infinite;
+    }
+
+    @keyframes soundPulse {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+      50% { transform: translateX(-50%) scale(1.1); opacity: 0.5; }
+    }
+
+    .floating-note {
+      position: absolute;
+      font-family: 'Crimson Pro', serif;
+      font-size: 32px;
+      color: var(--amber);
+      opacity: 0;
+      animation: floatNote 4s ease infinite;
+    }
+
+    .floating-note:nth-child(1) { top: 10%; right: 10%; animation-delay: 0s; }
+    .floating-note:nth-child(2) { top: 30%; left: 5%; animation-delay: 1.3s; }
+    .floating-note:nth-child(3) { bottom: 20%; right: 15%; animation-delay: 2.6s; }
+
+    @keyframes floatNote {
+      0% { opacity: 0; transform: translateY(10px); }
+      30% { opacity: 0.4; }
+      70% { opacity: 0.4; }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }
+
+    /* ── Info Cards ── */
+    .info-cards {
+      background: var(--dark-wood);
+      color: var(--cream);
+    }
+
+    .info-cards .section-label {
+      color: var(--amber);
+    }
+
+    .info-cards .section-heading {
+      color: var(--cream);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .info-card {
+      background: rgba(255,255,255, 0.04);
+      padding: 48px 36px;
+      transition: background 0.4s ease;
+      border-top: 1px solid rgba(200,150,62,0.15);
+    }
+
+    .info-card:hover {
+      background: rgba(255,255,255, 0.08);
+    }
+
+    .info-card-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .info-card h3 {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--amber);
+    }
+
+    .info-card p {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(245, 240, 232, 0.7);
+    }
+
+    .info-card .highlight {
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    /* ── Lineup ── */
+    .lineup {
+      background:
+        radial-gradient(ellipse 40% 40% at 10% 50%, rgba(200,150,62,0.08), transparent),
+        var(--cream);
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .artist-card {
+      padding: 0;
+      background: var(--warm-ivory);
+      border: 1px solid rgba(200,150,62,0.15);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artist-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.4s ease, transform 0.6s ease;
+    }
+
+    .artist-card:hover .artist-img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+
+    .artist-img-wrap {
+      overflow: hidden;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .artist-card-body {
+      padding: 24px 28px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artist-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--terracotta);
+      transition: height 0.4s ease;
+    }
+
+    .artist-card:hover::before {
+      height: 100%;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
+    }
+
+    .artist-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--terracotta);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .artist-name {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      color: var(--dark-wood);
+      margin-bottom: 8px;
+    }
+
+    .artist-genre {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--soft-brown);
+      margin-bottom: 16px;
+    }
+
+    .artist-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--medium-wood);
+    }
+
+    .artist-yt {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--terracotta);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .artist-yt:hover {
+      color: var(--dark-wood);
+    }
+
+    .artist-yt svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ── Timetable ── */
+    .timetable {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .timetable .section-label { color: var(--amber); }
+    .timetable .section-heading { color: var(--cream); }
+
+    .timetable-list {
+      max-width: 800px;
+    }
+
+    .timetable-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(200,150,62,0.12);
+      align-items: start;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .timetable-item:hover {
+      opacity: 1;
+    }
+
+    .timetable-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--amber);
+      padding-top: 2px;
+    }
+
+    .timetable-content h4 {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .timetable-content p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.5);
+    }
+
+    .timetable-break {
+      opacity: 0.4 !important;
+    }
+
+    .timetable-break .timetable-content h4 {
+      font-weight: 400;
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    .timetable-part {
+      padding: 20px 0 8px;
+      border-bottom: 2px solid var(--amber);
+      margin-bottom: 4px;
+      margin-top: 40px;
+    }
+
+    .timetable-part:first-child {
+      margin-top: 0;
+    }
+
+    .timetable-part h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+    }
+
+    .timetable-setlist {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: rgba(245,240,232,0.4);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    /* ── Ticket ── */
+    /* ── Sponsors ── */
+    .sponsors-section {
+      background: var(--warm-ivory);
+    }
+
+    .sponsor-block {
+      margin-bottom: 48px;
+    }
+
+    .sponsor-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .sponsor-block-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(200,150,62,0.2);
+    }
+
+    .sponsor-organizer {
+      font-family: 'Crimson Pro', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--dark-wood);
+    }
+
+    .sponsor-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .sponsor-logo-card {
+      background: var(--cream);
+      border: 1px solid rgba(200,150,62,0.15);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 9;
+      transition: all 0.3s ease;
+    }
+
+    .sponsor-logo-card:hover {
+      box-shadow: 0 8px 24px rgba(44,24,16,0.06);
+      transform: translateY(-2px);
+    }
+
+    .sponsor-logo-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .sponsor-text-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--soft-brown);
+      line-height: 1.8;
+    }
+
+    .sponsor-text-list span {
+      position: relative;
+    }
+
+    .sponsor-text-list span:not(:last-child)::after {
+      content: '·';
+      position: absolute;
+      right: -13px;
+      color: var(--amber);
+    }
+
+    /* ── Map / 오시는 길 ── */
+    .directions {
+      background: var(--cream);
+    }
+
+    .directions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(135deg, var(--warm-ivory), rgba(200,150,62,0.08));
+      border: 1px solid rgba(200,150,62,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(0.6) contrast(1.1);
+    }
+
+    .directions-info h3 {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--dark-wood);
+      margin-bottom: 20px;
+      margin-top: 32px;
+    }
+
+    .directions-info h3:first-child {
+      margin-top: 0;
+    }
+
+    .directions-info p,
+    .directions-info li {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--medium-wood);
+    }
+
+    .directions-info ul {
+      list-style: none;
+    }
+
+    .directions-info li {
+      padding: 6px 0;
+    }
+
+    .directions-info li::before {
+      content: '→';
+      margin-right: 10px;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+
+    .transport-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      background: rgba(200,150,62,0.12);
+      color: var(--deep-amber);
+      margin-right: 8px;
+      font-weight: 400;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 64px 40px 40px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 64px;
+    }
+
+    .footer-brand {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--amber);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(200,150,62,0.1);
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.3);
+    }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── CTA Button ── */
+    .cta-button {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      padding: 16px 36px;
+      background: var(--terracotta);
+      color: var(--cream);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 32px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: var(--dark-wood);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(44,24,16,0.15);
+    }
+
+    .cta-button-light {
+      background: transparent;
+      border: 1px solid var(--amber);
+      color: var(--amber);
+    }
+
+    .cta-button-light:hover {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      section { padding: 80px 24px; }
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { height: 300px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .sponsor-logos { grid-template-columns: repeat(2, 1fr); }
+      .directions-grid { grid-template-columns: 1fr; }
+      .lineup-grid { grid-template-columns: 1fr; }
+      .timetable-item { grid-template-columns: 100px 1fr; gap: 16px; }
+
+      .hero { padding: 0 24px 60px; }
+      .hero-title { font-size: clamp(42px, 12vw, 80px); }
+
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    /* ── Mobile Nav Toggle ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--dark-wood);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 900px) {
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 80px 40px;
+        gap: 24px;
+        transition: right 0.4s ease;
+        box-shadow: -8px 0 40px rgba(0,0,0,0.08);
+      }
+
+      .nav-links.open { right: 0; display: flex; }
+
+      .nav-links a { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">미사통기타축제</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">축제소개</a></li>
+        <li><a href="#info">안내</a></li>
+        <li><a href="#lineup">출연진</a></li>
+        <li><a href="#timetable">타임테이블</a></li>
+        <li><a href="#sponsors">주최/후원</a></li>
+        <li><a href="#directions">오시는 길</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-strings">
+      <div class="string"></div>
+      <div class="string"></div>
+      <div class="string"></div>
+      <div class="string"></div>
+      <div class="string"></div>
+      <div class="string"></div>
+    </div>
+
+    <div class="container" style="margin-top: auto;">
+      <div class="hero-date">2026.04.26 SUN</div>
+      <h1 class="hero-title">미사<br><em>통기타축제</em></h1>
+      <p class="hero-subtitle">
+        봄바람에 실려오는 기타 선율.<br>
+        하남 미사호수공원에서 펼쳐지는<br>
+        감성 어쿠스틱 페스티벌.
+      </p>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+    <div class="about-text">
+      <div class="section-label reveal">// ABOUT THE FESTIVAL</div>
+      <h2 class="section-heading reveal reveal-delay-1">기타 하나로<br>연결되는 우리</h2>
+      <p class="reveal reveal-delay-2">
+        미사통기타축제는 기타를 사랑하는 모든 이들을 위한 축제입니다.
+        프로 뮤지션부터 동네에서 조용히 기타를 켜는 아마추어까지,
+        기타라는 하나의 악기로 연결되는 특별한 하루를 선사합니다.
+      </p>
+      <p class="reveal reveal-delay-3">
+        한강이 내려다보이는 미사호수공원 계단광장에서 펼쳐지는 야외 무대,
+        자유롭게 참여할 수 있는 오픈 잼 세션, 기타 전시와 체험 부스까지.
+        올해로 3회째를 맞이하는 미사통기타축제에 여러분을 초대합니다.
+      </p>
+    </div>
+
+    <div class="about-visual">
+      <div class="floating-note">&#9834;</div>
+      <div class="floating-note">&#9835;</div>
+      <div class="floating-note">&#9833;</div>
+      <div class="guitar-shape">
+        <div class="guitar-neck"></div>
+        <div class="guitar-body"></div>
+        <div class="sound-hole"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ── Info Cards ── -->
+  <section class="info-cards" id="info">
+    <div class="container">
+    <div class="section-label reveal">// FESTIVAL INFO</div>
+    <h2 class="section-heading reveal reveal-delay-1">알아두세요</h2>
+
+    <div class="cards-grid">
+      <div class="info-card reveal reveal-delay-1">
+        <span class="info-card-icon">&#128197;</span>
+        <h3>일시</h3>
+        <p>
+          <span class="highlight">2026년 4월 26일(일)</span><br>
+          오후 3시 — 오후 6시 20분
+        </p>
+      </div>
+      <div class="info-card reveal reveal-delay-2">
+        <span class="info-card-icon">&#128205;</span>
+        <h3>장소</h3>
+        <p>
+          <span class="highlight">하남 미사호수공원 계단광장</span><br>
+          경기도 하남시 미사동
+        </p>
+      </div>
+      <div class="info-card reveal reveal-delay-3">
+        <span class="info-card-icon">&#127928;</span>
+        <h3>프로그램</h3>
+        <p>
+          <span class="highlight">개회식 · 본공연 1부&2부 · 경품추첨</span><br>
+          MC 임채홍 진행, 12팀 아티스트 공연
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ── Lineup ── -->
+  <section class="lineup" id="lineup">
+    <div class="container">
+    <div class="section-label reveal">// LINEUP</div>
+    <h2 class="section-heading reveal reveal-delay-1">출연진</h2>
+
+    <div class="lineup-grid">
+      <div class="artist-card reveal reveal-delay-1">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/01-채홍.jpg" alt="임채홍"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 01</div>
+        <div class="artist-name">임채홍</div>
+        <div class="artist-genre">Vocalist</div>
+        <p class="artist-desc">83년 명동 쉘브르에서 가수활동 시작, 95년 미사리카페 고정가수로 활동. 87년 1집, 94년 2집, 19년 &lsquo;CHAEHONG IS BACK&rsquo; 3집 발매.</p>
+        <a href="https://www.youtube.com/@chaehonglim5662" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-2">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/02-김현호-아낌없이 주는 나무.jpg" alt="김현호"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 02</div>
+        <div class="artist-name">김현호</div>
+        <div class="artist-genre">World Musician</div>
+        <p class="artist-desc">전세계 90개국을 다니며 각 나라의 컬쳐곡, K-POP 콘서트를 통해 한국을 알리는 World Musician. 국제 마인드 강사로도 활동 중.</p>
+        <a href="https://www.youtube.com/@musicmart1004" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-3">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/05-김시영밴드.jpg" alt="김시영"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 03</div>
+        <div class="artist-name">김시영</div>
+        <div class="artist-genre">소나기 통기타연합 운영자</div>
+        <p class="artist-desc">소통·나눔·기쁨의 소나기 통기타연합 운영자. 60~70년대생의 감성 노래를 함께 부르고 소통하는 김시영TV 방송. 시흥문화홍보대사.</p>
+        <a href="https://www.youtube.com/results?search_query=%EA%B9%80%EC%8B%9C%EC%98%81tv" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-4">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/06-모노크롬.jpg" alt="모노크롬"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 04</div>
+        <div class="artist-name">모노크롬</div>
+        <div class="artist-genre">Guitar &amp; Harmonica Duo · 최화근, 김영로</div>
+        <p class="artist-desc">오랜 친구인 하모니카 강사와 기타 강사가 2022년 결성한 혼성 듀엣. 기타와 하모니카만으로 벤쳐스의 곡을 연주하는 새로운 장르. 문체부 주관 실버마이크예술가로 활동.</p>
+        <a href="https://www.youtube.com/watch?v=PJVoFknxoVY" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube · 최화근</a>
+        <a href="https://www.youtube.com/@%EA%B9%80%EC%98%81%EB%A1%9C" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube · 김영로</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-1">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/04-강울림.jpg" alt="강울림"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 05</div>
+        <div class="artist-name">강울림</div>
+        <div class="artist-genre">Folk / Rock Vocalist</div>
+        <p class="artist-desc">신촌블루스의 대표 보컬. 포크와 락 음악으로 대중과 호흡하며, 미사리 공연장 블루홀을 운영하며 문화예술 발전에 기여.</p>
+        <a href="https://www.youtube.com/@%EA%B0%95%EC%9A%B8%EB%A6%BC" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-2">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/03-류주석-버드뮤직.jpg" alt="류주석"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 06</div>
+        <div class="artist-name">류주석</div>
+        <div class="artist-genre">Guitar Technician &amp; Musician</div>
+        <p class="artist-desc">버드뮤직 대표이자 국내 유일의 테일러 기타 골드 레벨 테크니션. 해군홍보단 출신으로 현재 뮤지션으로도 활발히 활동 중.</p>
+        <a href="https://www.youtube.com/@Budmusic" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-3">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/09-알로하밴드.jpg" alt="알로하밴드"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 07</div>
+        <div class="artist-name">알로하밴드</div>
+        <div class="artist-genre">Acoustic Duo · 송준한</div>
+        <p class="artist-desc">두 대의 기타와 두 목소리로 따뜻한 위로와 감성을 전하는 어쿠스틱 듀오.</p>
+        <a href="https://youtube.com/channel/UC8s0-EadJ_rY_i0UJ7aL3oA?si=WP1KO-GTOXx3C2sE" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-4">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/07-올리브밴드.jpg" alt="올리브밴드"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 08</div>
+        <div class="artist-name">올리브밴드</div>
+        <div class="artist-genre">Acoustic Band · 격앙 박철</div>
+        <p class="artist-desc">목소리의 귀재 격앙 박철과 베이스의 헤이즐이 함께하는 밴드. 언제나 즐거운 마음으로 관객과 함께 음악을 즐깁니다.</p>
+        <a href="https://www.youtube.com/@%EA%B2%A9%EC%95%99%EB%B0%95%EC%B2%A0" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-1">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/08-어느날갑자기.jpg" alt="어느날갑자기밴드"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 09</div>
+        <div class="artist-name">어느날갑자기밴드</div>
+        <div class="artist-genre">Acoustic Band · 류종찬</div>
+        <p class="artist-desc">빠른 음악을 추구하는 남녀 혼성 어쿠스틱 밴드. 멤버 제니는 &lsquo;꿈이 있는 곳으로&rsquo;(허만성) 노래 발표.</p>
+        <a href="https://www.youtube.com/@%EC%96%B4%EB%8A%90%EB%82%A0%EA%B0%91%EC%9E%90%EA%B8%B0%EC%A0%9C%EB%8B%88" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-2">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/10-마지노선.jpg" alt="마지노선"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 10</div>
+        <div class="artist-name">마지노선</div>
+        <div class="artist-genre">Acoustic Duo · 양기민, 나무</div>
+        <p class="artist-desc">감성 짙은 음색과 화음, 화려한 통기타 실력으로 많은 호응을 얻고 있는 남성 듀오.</p>
+        <a href="https://www.youtube.com/@%EC%96%91%EA%B8%B0%EB%AF%BC%ED%86%B5%EA%B8%B0%ED%83%80%EC%97%AC%ED%96%89" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-3">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/11-나우누리.jpg" alt="나우누리"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 11</div>
+        <div class="artist-name">나우누리</div>
+        <div class="artist-genre">Music Group · 김병진, 정의별, 카로소</div>
+        <p class="artist-desc">서울 노원구의 대표 음악그룹 노원둥지 나우누리팀. 재능봉사를 통해 지역사회에 기여하며 음악적 폭이 넓은 튼튼한 팀.</p>
+        <a href="https://www.youtube.com/@%EB%85%B8%EC%9B%90%ED%86%B5%EA%B8%B0%ED%83%80%EB%91%A5%EC%A7%80" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-4">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/12-하남뮤직캠프.jpg" alt="하남뮤직캠프"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 12</div>
+        <div class="artist-name">하남뮤직캠프</div>
+        <div class="artist-genre">Acoustic Music Group · 김남수 회장</div>
+        <p class="artist-desc">하남시의 대표적 어쿠스틱 음악그룹이자 봉사단체. 시민의 문화참여를 통한 행복을 추구하며 지속적 봉사공연 활동.</p>
+        <a href="https://www.youtube.com/results?search_query=%ED%95%98%EB%82%A8%EB%AE%A4%EC%A7%81%EC%BA%A0%ED%94%84" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ── Timetable ── -->
+  <section class="timetable" id="timetable">
+    <div class="container">
+    <div class="section-label reveal">// TIMETABLE</div>
+    <h2 class="section-heading reveal reveal-delay-1">4.26 일</h2>
+
+    <div class="timetable-list">
+
+      <!-- ── A. 개회 ── -->
+      <div class="timetable-part reveal">
+        <h3>A. 개회</h3>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">15:00 — 15:30</div>
+        <div class="timetable-content">
+          <h4>개회 및 귀빈 소개·인사</h4>
+          <p>사회 · 임채홍</p>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">15:30 — 15:45</div>
+        <div class="timetable-content">
+          <h4>김시영 밴드</h4>
+          <p>가을소풍 밴드 공연</p>
+          <div class="timetable-setlist">그대위해 · 너무아픈 사랑은 사랑이 아니였음을 · 먼지가 되어</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">15:45 — 16:00</div>
+        <div class="timetable-content">
+          <h4>김현호</h4>
+          <p>아낌없이 주는 나무</p>
+          <div class="timetable-setlist">유년시절의 기행 · 행복을 주는 사람 · 인생은 하하하</div>
+        </div>
+      </div>
+
+      <div class="timetable-item timetable-break reveal">
+        <div class="timetable-time">16:00 — 16:10</div>
+        <div class="timetable-content">
+          <h4>개회 인사말 · 김남수 회장</h4>
+        </div>
+      </div>
+
+      <!-- ── B. 본공연 1부 ── -->
+      <div class="timetable-part reveal">
+        <h3>B. 본공연 1부</h3>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">16:10 — 16:20</div>
+        <div class="timetable-content">
+          <h4>모노크롬</h4>
+          <p>하모니카 &amp; 일렉기타 연주</p>
+          <div class="timetable-setlist">Pipeline · Have You Ever Seen the Rain · Ob-La-Di, Ob-La-Da</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">16:20 — 16:30</div>
+        <div class="timetable-content">
+          <h4>마지노선</h4>
+          <div class="timetable-setlist">The Sound of Silence · 얼마나 좋을까</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">16:30 — 16:40</div>
+        <div class="timetable-content">
+          <h4>올리브밴드</h4>
+          <p>통기타 + 베이스기타</p>
+          <div class="timetable-setlist">Let's Twist Again · Bad Moon Rising</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">16:40 — 16:50</div>
+        <div class="timetable-content">
+          <h4>노원둥지 나우누리</h4>
+          <div class="timetable-setlist">나는 행복한 사람 · 포크송 메들리</div>
+        </div>
+      </div>
+
+      <!-- ── C ── -->
+      <div class="timetable-part reveal">
+        <h3>C.</h3>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">16:50 — 17:05</div>
+        <div class="timetable-content">
+          <h4>신촌블루스 강울림</h4>
+          <div class="timetable-setlist">비와 당신 · It's a Heartache</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">17:05 — 17:15</div>
+        <div class="timetable-content">
+          <h4>알로하밴드</h4>
+          <div class="timetable-setlist">꿈에 (조덕배) · 그녀를 만나는 곳 100m전 (이상우)</div>
+        </div>
+      </div>
+
+      <!-- ── D. 본공연 2부 ── -->
+      <div class="timetable-part reveal">
+        <h3>D. 본공연 2부</h3>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">17:15 — 17:30</div>
+        <div class="timetable-content">
+          <h4>류주석</h4>
+          <p>버드뮤직 대표</p>
+          <div class="timetable-setlist">Lemon Tree · 그대 내 맘에 들어오면은 (조덕배) · 둠둠둠 (류주석)</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">17:30 — 17:40</div>
+        <div class="timetable-content">
+          <h4>어느날갑자기밴드</h4>
+          <div class="timetable-setlist">Venus (Shocking Blue) · Hot Stuff (Donna Summer)</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">17:40 — 17:50</div>
+        <div class="timetable-content">
+          <h4>하남뮤직캠프</h4>
+          <div class="timetable-setlist">바람과 구름 · 젊은미소</div>
+        </div>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">17:50 — 18:05</div>
+        <div class="timetable-content">
+          <h4>임채홍</h4>
+        </div>
+      </div>
+
+      <!-- ── 폐회 ── -->
+      <div class="timetable-part reveal">
+        <h3>CLOSING</h3>
+      </div>
+
+      <div class="timetable-item reveal">
+        <div class="timetable-time">18:05 — 18:20</div>
+        <div class="timetable-content">
+          <h4>경품추첨 및 폐회</h4>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <!-- ── Ticket ── -->
+  <section class="sponsors-section" id="sponsors">
+    <div class="container">
+    <div class="section-label reveal">// ORGANIZER &amp; SPONSORS</div>
+    <h2 class="section-heading reveal reveal-delay-1">주최 / 후원</h2>
+
+    <div class="sponsor-block reveal reveal-delay-2">
+      <div class="sponsor-block-label">주최 / 주관</div>
+      <div class="sponsor-organizer">하남뮤직캠프</div>
+    </div>
+
+    <div class="sponsor-block reveal reveal-delay-3">
+      <div class="sponsor-block-label">후원</div>
+      <div class="sponsor-logos">
+        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-01.svg" alt="하남시"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-02.svg" alt="하남문화재단"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-03.svg" alt="Taylor Guitars"></div>
+        <div class="sponsor-logo-card"><img src="images/sponsors/sponsor-04.svg" alt="버드뮤직"></div>
+      </div>
+      <div class="sponsor-text-list">
+        <span>미사동 주민센터</span>
+        <span>하남시 생활문화센터</span>
+        <span>소나기 통기타연합</span>
+        <span>미사리 블루홀</span>
+        <span>노원둥지 나우누리</span>
+        <span>하남시 자원봉사센터</span>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ── Directions ── -->
+  <section class="directions" id="directions">
+    <div class="container">
+    <div class="section-label reveal">// DIRECTIONS</div>
+    <h2 class="section-heading reveal reveal-delay-1">오시는 길</h2>
+
+    <div class="directions-grid">
+      <div class="map-placeholder reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.5!2d127.18!3d37.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMzJzM2LjAiTiAxMjfCsDEwJzQ4LjAiRQ!5e0!3m2!1sko!2skr!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          title="미사리 수변공원 지도"
+        ></iframe>
+      </div>
+
+      <div class="directions-info reveal reveal-delay-1">
+        <h3>&#128907; 주소</h3>
+        <p>경기도 하남시 미사동 미사호수공원<br>계단광장</p>
+
+        <h3><span class="transport-badge">지하철</span> 대중교통</h3>
+        <ul>
+          <li>5호선 미사역 1번 출구 → 도보 15분</li>
+          <li>미사역에서 축제 셔틀버스 운행 (12:00~21:00)</li>
+        </ul>
+
+        <h3><span class="transport-badge">자동차</span> 자가용</h3>
+        <ul>
+          <li>올림픽대로 미사IC → 미사리 수변공원 방면</li>
+          <li>주차장 이용 가능 (유료 · 5,000원/일)</li>
+          <li>주차 공간 한정 — 대중교통 이용 권장</li>
+        </ul>
+
+        <h3>&#128222; 문의</h3>
+        <p>
+          하남뮤직캠프<br>
+          전화: 010-3410-1211<br>
+          이메일: kns1211@naver.com
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">미사통기타축제 2026</div>
+        <p style="font-size: 14px; font-weight: 300; color: rgba(245,240,232,0.5); margin-top: 12px; line-height: 1.7;">
+          미사호수공원 계단광장에서 여러분을 기다립니다<br>
+          따뜻한 통기타 선율과 함께하는 특별한 시간
+        </p>
+      </div>
+      <div style="text-align: right;">
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--amber); margin-bottom: 8px;">문의 | 하남뮤직캠프</p>
+        <p style="font-size: 14px; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1.8;">
+          010-3410-1211<br>
+          kns1211@naver.com
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 미사통기타축제. All rights reserved.</p>
+      <p>Made with &#9834; and six strings</p>
+    </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal ──
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // ── Mobile nav toggle ──
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ── Smooth scroll for nav links ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ── String hover vibration ──
+    document.querySelectorAll('.hero-strings .string').forEach(string => {
+      string.addEventListener('mouseenter', () => {
+        string.style.animation = 'none';
+        string.offsetHeight; // reflow
+        string.style.opacity = '0.35';
+        string.style.transition = 'opacity 0.2s ease';
+        setTimeout(() => {
+          string.style.opacity = '0.15';
+          string.style.transition = 'opacity 1s ease';
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>
