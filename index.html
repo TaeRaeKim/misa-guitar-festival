@@ -138,6 +138,19 @@
         linear-gradient(175deg, var(--cream) 0%, var(--warm-ivory) 100%);
     }
 
+    .hero-img {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-img-pc { width: 100%; max-width: 1200px; }
+    .hero-img-mobile { display: none; }
+
     .hero-strings {
       position: absolute;
       top: 0; left: 0;
@@ -1053,6 +1066,8 @@
       .timetable-item { grid-template-columns: 100px 1fr; gap: 16px; }
 
       .hero { padding: 0 24px 60px; }
+      .hero-img-pc { display: none; }
+      .hero-img-mobile { display: block; width: 100%; max-width: none; }
       .hero-title { font-size: clamp(42px, 12vw, 80px); }
 
       footer { padding: 48px 24px 32px; }
@@ -1132,7 +1147,9 @@
       <div class="string"></div>
     </div>
 
-    <div class="container" style="margin-top: auto;">
+    <img class="hero-img hero-img-pc" src="images/hero-pc.png" alt="미사통기타축제">
+    <img class="hero-img hero-img-mobile" src="images/hero-mobile.png" alt="미사통기타축제">
+    <div class="container">
       <div class="hero-date">2026.04.26 SUN</div>
       <h1 class="hero-title">미사<br><em>통기타축제</em></h1>
       <p class="hero-subtitle">
@@ -1235,7 +1252,7 @@
         </div>
       </div>
       <div class="artist-card reveal reveal-delay-2">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/02-김현호-아낌없이 주는 나무.jpg" alt="김현호"></div>
+        <div class="artist-img-wrap"><img class="artist-img" src="images/02-김현호.jpg" alt="김현호"></div>
         <div class="artist-card-body">
         <div class="artist-number">ARTIST 02</div>
         <div class="artist-name">김현호</div>
@@ -1245,19 +1262,39 @@
         </div>
       </div>
       <div class="artist-card reveal reveal-delay-3">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/05-김시영밴드.jpg" alt="김시영"></div>
+        <div class="artist-img-wrap"><img class="artist-img" src="images/03-류주석.jpg" alt="류주석"></div>
         <div class="artist-card-body">
         <div class="artist-number">ARTIST 03</div>
-        <div class="artist-name">김시영</div>
+        <div class="artist-name">류주석</div>
+        <div class="artist-genre">Guitar Technician &amp; Musician</div>
+        <p class="artist-desc">버드뮤직 대표이자 국내 유일의 테일러 기타 골드 레벨 테크니션. 대표곡 '둠둠둠', 저서 '통기타 때려잡기'의 저자. 해군홍보단 출신으로 현재 뮤지션으로도 활발히 활동 중.</p>
+        <a href="https://www.youtube.com/@Budmusic" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-4">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/04-강울림.png" alt="강울림"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 04</div>
+        <div class="artist-name">강울림</div>
+        <div class="artist-genre">Folk / Rock Vocalist</div>
+        <p class="artist-desc">신촌블루스의 보컬. 포크와 락 음악으로 대중과 호흡하며, 미사리 공연장 블루홀을 운영하며 문화예술 발전에 기여.</p>
+        <a href="https://www.youtube.com/@%EA%B0%95%EC%9A%B8%EB%A6%BC" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-1">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/05-김시영밴드.jpg" alt="김시영"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 05</div>
+        <div class="artist-name">김시영밴드</div>
         <div class="artist-genre">소나기 통기타연합 운영자</div>
         <p class="artist-desc">소통·나눔·기쁨의 소나기 통기타연합 운영자. 60~70년대생의 감성 노래를 함께 부르고 소통하는 김시영TV 방송. 시흥시문화홍보대사.</p>
         <a href="https://www.youtube.com/results?search_query=%EA%B9%80%EC%8B%9C%EC%98%81tv" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
         </div>
       </div>
-      <div class="artist-card reveal reveal-delay-4">
+      <div class="artist-card reveal reveal-delay-2">
         <div class="artist-img-wrap"><img class="artist-img" src="images/06-모노크롬.jpg" alt="모노크롬"></div>
         <div class="artist-card-body">
-        <div class="artist-number">ARTIST 04</div>
+        <div class="artist-number">ARTIST 06</div>
         <div class="artist-name">모노크롬</div>
         <div class="artist-genre">Guitar &amp; Harmonica Duo · 최화근, 김영로</div>
         <p class="artist-desc">오랜 친구인 하모니카 강사와 기타 강사가 2022년 결성한 혼성 듀엣. 기타와 하모니카만으로 벤쳐스의 곡을 연주하는 새로운 장르. 문체부 주관 실버마이크예술가로 활동.</p>
@@ -1265,54 +1302,34 @@
         <a href="https://www.youtube.com/@%EA%B9%80%EC%98%81%EB%A1%9C" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube · 김영로</a>
         </div>
       </div>
-      <div class="artist-card reveal reveal-delay-1">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/04-강울림.png" alt="강울림"></div>
-        <div class="artist-card-body">
-        <div class="artist-number">ARTIST 05</div>
-        <div class="artist-name">강울림</div>
-        <div class="artist-genre">Folk / Rock Vocalist</div>
-        <p class="artist-desc">신촌블루스의 보컬. 포크와 락 음악으로 대중과 호흡하며, 미사리 공연장 블루홀을 운영하며 문화예술 발전에 기여.</p>
-        <a href="https://www.youtube.com/@%EA%B0%95%EC%9A%B8%EB%A6%BC" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
-        </div>
-      </div>
-      <div class="artist-card reveal reveal-delay-2">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/03-류주석-버드뮤직.jpg" alt="류주석"></div>
-        <div class="artist-card-body">
-        <div class="artist-number">ARTIST 06</div>
-        <div class="artist-name">류주석</div>
-        <div class="artist-genre">Guitar Technician &amp; Musician</div>
-        <p class="artist-desc">버드뮤직 대표이자 국내 유일의 테일러 기타 골드 레벨 테크니션. 대표곡 '둠둠둠', 저서 '통기타 때려잡기'의 저자. 해군홍보단 출신으로 현재 뮤지션으로도 활발히 활동 중.</p>
-        <a href="https://www.youtube.com/@Budmusic" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
-        </div>
-      </div>
       <div class="artist-card reveal reveal-delay-3">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/09-알로하밴드.jpg" alt="알로하밴드"></div>
-        <div class="artist-card-body">
-        <div class="artist-number">ARTIST 07</div>
-        <div class="artist-name">알로하밴드</div>
-        <div class="artist-genre">Acoustic Duo · 송준한</div>
-        <p class="artist-desc">두 대의 기타와 두 목소리로 따뜻한 위로와 감성을 전하는 어쿠스틱 듀오.</p>
-        <a href="https://youtube.com/channel/UC8s0-EadJ_rY_i0UJ7aL3oA?si=WP1KO-GTOXx3C2sE" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
-        </div>
-      </div>
-      <div class="artist-card reveal reveal-delay-4">
         <div class="artist-img-wrap"><img class="artist-img" src="images/07-올리브밴드.jpg" alt="올리브밴드"></div>
         <div class="artist-card-body">
-        <div class="artist-number">ARTIST 08</div>
+        <div class="artist-number">ARTIST 07</div>
         <div class="artist-name">올리브밴드</div>
         <div class="artist-genre">Acoustic Band · 격앙 박철</div>
         <p class="artist-desc">목소리의 귀재 격앙 박철과 베이스의 헤이즐이 함께하는 밴드. 언제나 즐거운 마음으로 관객과 함께 음악을 즐깁니다.</p>
         <a href="https://www.youtube.com/@%EA%B2%A9%EC%95%99%EB%B0%95%EC%B2%A0" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
         </div>
       </div>
-      <div class="artist-card reveal reveal-delay-1">
+      <div class="artist-card reveal reveal-delay-4">
         <div class="artist-img-wrap"><img class="artist-img" src="images/08-어느날갑자기.jpg" alt="어느날갑자기밴드"></div>
         <div class="artist-card-body">
-        <div class="artist-number">ARTIST 09</div>
+        <div class="artist-number">ARTIST 08</div>
         <div class="artist-name">어느날갑자기밴드</div>
         <div class="artist-genre">Acoustic Band · 류종찬</div>
         <p class="artist-desc">빠른 음악을 추구하는 남녀 혼성 어쿠스틱 밴드. 멤버 제니는 &lsquo;꿈이 있는 곳으로&rsquo;(허만성) 노래 발표.</p>
         <a href="https://www.youtube.com/@%EC%96%B4%EB%8A%90%EB%82%A0%EA%B0%91%EC%9E%90%EA%B8%B0%EC%A0%9C%EB%8B%88" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        </div>
+      </div>
+      <div class="artist-card reveal reveal-delay-1">
+        <div class="artist-img-wrap"><img class="artist-img" src="images/09-알로하밴드.jpg" alt="알로하밴드"></div>
+        <div class="artist-card-body">
+        <div class="artist-number">ARTIST 09</div>
+        <div class="artist-name">알로하밴드</div>
+        <div class="artist-genre">Acoustic Duo · 송준한</div>
+        <p class="artist-desc">두 대의 기타와 두 목소리로 따뜻한 위로와 감성을 전하는 어쿠스틱 듀오.</p>
+        <a href="https://youtube.com/channel/UC8s0-EadJ_rY_i0UJ7aL3oA?si=WP1KO-GTOXx3C2sE" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
         </div>
       </div>
       <div class="artist-card reveal reveal-delay-2">
@@ -1326,12 +1343,12 @@
         </div>
       </div>
       <div class="artist-card reveal reveal-delay-3">
-        <div class="artist-img-wrap"><img class="artist-img" src="images/11-나우누리.jpg" alt="나우누리"></div>
+        <div class="artist-img-wrap"><img class="artist-img" src="images/11-노원통기타둥지.jpg" alt="나우누리"></div>
         <div class="artist-card-body">
         <div class="artist-number">ARTIST 11</div>
-        <div class="artist-name">나우누리</div>
-        <div class="artist-genre">Music Group · 김병진, 정의별, 카로소</div>
-        <p class="artist-desc">서울 노원구의 대표 음악그룹 노원둥지 나우누리팀. 재능봉사를 통해 지역사회에 기여하며 음악적 폭이 넓은 튼튼한 팀.</p>
+        <div class="artist-name">노원통기타 둥지</div>
+        <div class="artist-genre">나누우리 · 김병진, 정의별, 카로소</div>
+        <p class="artist-desc">서울 노원구의 대표 음악그룹 노원 통기타 둥지의 나누우리팀으로 포크송을 중심으로 다양한 스타일의 노래로 흥겨움을 선사.</p>
         <a href="https://www.youtube.com/@%EB%85%B8%EC%9B%90%ED%86%B5%EA%B8%B0%ED%83%80%EB%91%A5%EC%A7%80" target="_blank" rel="noopener" class="artist-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
         </div>
       </div>
@@ -1353,7 +1370,7 @@
   <section class="timetable" id="timetable">
     <div class="container">
     <div class="section-label reveal">// TIMETABLE</div>
-    <h2 class="section-heading reveal reveal-delay-1">4. 26 <span style="font-size: 0.6em; font-weight: 400;">일요일</span></h2>
+    <h2 class="section-heading reveal reveal-delay-1">4. 26 일<span style="font-size: 0.6em; font-weight: 400;">요일</span></h2>
 
     <div class="timetable-list">
 
@@ -1429,7 +1446,7 @@
       <div class="timetable-item reveal">
         <div class="timetable-time">16:40 — 16:50</div>
         <div class="timetable-content">
-          <h4>노원둥지 나우누리</h4>
+          <h4>노원통기타 둥지 나누우리</h4>
           <div class="timetable-setlist">나는 행복한 사람 · 포크송 메들리</div>
         </div>
       </div>
@@ -1609,7 +1626,7 @@
     <div class="container">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">미사 통기타축제 | 2026. 4. 26 (일) 하남시 미사호수공원</div>
+        <div class="footer-brand">미사 통기타축제<br>2026. 4. 26 (일)<br>하남시 미사호수공원</div>
         <p class="footer-desc">
           미사호수공원 음악분수 광장에서 여러분을 기다립니다<br>
           따뜻한 통기타 선율과 함께하는 특별한 시간
