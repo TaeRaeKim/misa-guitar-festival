@@ -1,2 +1,5 @@
 tmp/
 og-image.html
+node_modules/
+package.json
+package-lock.json
