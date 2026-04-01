@@ -931,6 +931,41 @@
       border-top: 1px solid rgba(200,150,62,0.1);
     }
 
+    .footer-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.5);
+      margin-top: 12px;
+      line-height: 1.7;
+    }
+
+    .footer-contact {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-contact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .footer-contact-link {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-contact-link:hover {
+      color: var(--amber);
+    }
+
     .footer-bottom p {
       font-size: 12px;
       font-weight: 300;
@@ -1005,7 +1040,9 @@
       .hero { padding: 0 24px 60px; }
       .hero-title { font-size: clamp(42px, 12vw, 80px); }
 
-      .footer-top { flex-direction: column; gap: 24px; }
+      footer { padding: 48px 24px 32px; }
+      .footer-top { flex-direction: column; gap: 32px; }
+      .footer-contact { text-align: left; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
 
@@ -1522,7 +1559,7 @@
       </div>
 
       <div class="directions-info reveal reveal-delay-1">
-        <h3>&#128907; 주소</h3>
+        <h3>&#128205; 주소</h3>
         <p>경기도 하남시 망월동 1073<br>미사호수공원 음악분수 광장</p>
 
         <h3><span class="transport-badge">지하철</span> 대중교통</h3>
@@ -1556,22 +1593,19 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand">미사통기타축제 2026</div>
-        <p style="font-size: 14px; font-weight: 300; color: rgba(245,240,232,0.5); margin-top: 12px; line-height: 1.7;">
+        <p class="footer-desc">
           미사호수공원 음악분수 광장에서 여러분을 기다립니다<br>
           따뜻한 통기타 선율과 함께하는 특별한 시간
         </p>
       </div>
-      <div style="text-align: right;">
-        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--amber); margin-bottom: 8px;">문의 | 하남뮤직캠프</p>
-        <p style="font-size: 14px; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1.8;">
-          010-3410-1211<br>
-          kns1211@naver.com
-        </p>
+      <div class="footer-contact">
+        <p class="footer-contact-label">문의 | 하남뮤직캠프</p>
+        <a href="tel:010-3410-1211" class="footer-contact-link">&#128222; 010-3410-1211</a>
+        <a href="mailto:kns1211@naver.com" class="footer-contact-link">&#9993; kns1211@naver.com</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 미사통기타축제. All rights reserved.</p>
-      <p>Made with &#9834; and six strings</p>
     </div>
     </div>
   </footer>
